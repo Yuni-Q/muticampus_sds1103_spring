@@ -1,0 +1,33 @@
+USE SPRING
+
+CREATE TABLE BOARD(
+	ARTICLE_NUM INT PRIMARY KEY AUTO_INCREMENT,
+	TITLE VARCHAR(100) NOT NULL DEFAULT 'NO TITLE',
+	WRITER VARCHAR(50) NOT NULL,
+	CONTENT TEXT,
+	READ_COUNT INT NOT NULL,
+	WRITE_DATE DATETIME NOT NULL, 
+	FOREIGN KEY(WRITER) REFERENCES MEMBER(MEMBER_ID)
+);
+---------------------------------------------------------------------------------------------------
+[게시판 실습 순서]
+1. BoardVO 클래스 작성
+2. 매퍼 작성(BoardMapper 인터페이스, board-mapper.xml)
+3. applicationContext.xml(model-beans.xml) 어제 멤버 작업할 때 다 작성해놓음.
+4. BoardDao 클래스 작성
+5. BoardPageVO 클래스 작성(게시판 입장시 한 페이지에 보여져야 할 정보 묶음)
+6. BoardService 클래스 작성
+7. MVC 웹 작업 시작
+  - 어제 dispatcher 서블릿은 web.xml에 작성해 놓음.
+
+
+
+
+
+
+
+
+
+
+
+

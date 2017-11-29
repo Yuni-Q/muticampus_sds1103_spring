@@ -1,0 +1,34 @@
+[스프링 MVC 웹 + DB 작업]
+dependency : spring context,core,web,webmvc,jdbc / commons-dbcp / mysql-connector 
+  / mybatis, mybatis-spring / jstl
+------------------------------------------------------------------------------------------------------
+[작업할 파일 목록]
+vo 	: BookVo.java
+mapper 	: BookMapper.java , book-mapper.xml
+repository : BookDao.java
+controller : BookController.java
+스프링 빈 설정파일 : applicationContext.xml, 0000-servlet.xml
+Dispatcher 서블릿 등록 : web.xml
+WebContent 폴더 : index.jsp, book_list.jsp, add_book_form.jsp, add_result.jsp
+------------------------------------------------------------------------------------------------------
+[작업 순서 - 필수는 아님. 개발자가 편한 순서로 작업하면 됨]
+1. 데이터베이스 테이블 생성
+2. 프로젝트 생성 및 dependency 추가
+3. mapper(xml + interface) 작성
+4. applicationContext.xml 작성
+5. Dao 클래스 작성 -> 보통은 이 이후에 Service 클래스도 작성함. 우리는 안했음.
+6. 스프링 MVC 작업 시작
+  (1) DispatcherServlet 을 web.xml에 등록
+  (2) dispatcher-servlet.xml 파일 생성
+  (3) 컨트롤러 클래스 작성(@Controller, @RequestMapping)
+  (4) dispatcher-servlet.xml 파일에 스캔 및 ViewResolver 작성
+  (5) 관련 jsp 파일 작성
+  (6) 테스트
+
+
+
+
+
+
+
+

@@ -1,0 +1,33 @@
+[스프링 MVC]
+* 동작 순서
+ 1. DispatcherServlet이 Http요청을 받음
+ 2. HandlerMapping으로 요청 분석후 Controller 선택
+ 3. 해당 Controller가 작업 수행 후 결과를 ModelAndView로 반환.
+ (ModelAndView : 사용자에게 보여줄 데이터와 화면 만드는 데 필요한 정보 들어있음.)
+ 4. ViewResolver를 통해 보여질 뷰 선택
+ 5. View가 클라이언트에게 전달됨.
+----------------------------------------------------------------------------------------------------
+* Dependency : spring context,core,web,webmvc
+----------------------------------------------------------------------------------------------------
+* 실습 세부내용
+ 1. Dynamic Web Project 생성 및 Maven 프로젝트로 convert, dependency 추가.
+ 2. DispatcherServlet 을 web.xml 등록
+   (1)servlet-name, servlet-class, load-on-startup 설정
+   (2)해당 servlet이 어떤 요청을 처리하는지 servlet-mapping 태그 추가
+ 3. 위에서 만든 서블릿의 빈 설정파일 생성[파일이름 : 서블릿이름-servlet.xml]
+   (1) aaa-servlet.xml 파일에는 HandlerMapping, Controller, ViewResolver 등록이 필요함.
+      : HandlerMapping, Controller는 애노테이션으로 등록하고 ViewResolver는 xml 태그로
+      등록해줌.
+   (2) 컨트롤러 클래스에서 요청을 처리하는 메소드 작성-ModelAndView 리턴함.
+ 4. 마지막 html 문서 만들어 주는 용도의 my_hello.jsp 파일 작성
+ 5. 테스트
+
+
+
+
+
+
+
+	
+
+ 

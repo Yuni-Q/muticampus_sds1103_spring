@@ -1,0 +1,10 @@
+[파일 업로드 다운로드 자료실]
+Dependency : spring context,core,web,webmvc,jdbc/ commons-dbcp,io,fileupload/ 
+	mybatis, mybatis-spring/ mysql-connector/ jstl
+--------------------------------------------------------------------------------------------------
+use spring;
+create table file_repository(
+	file_num int primary key auto_increment,
+	original_name varchar(100) not null,
+	saved_path varchar(200) unique
+);

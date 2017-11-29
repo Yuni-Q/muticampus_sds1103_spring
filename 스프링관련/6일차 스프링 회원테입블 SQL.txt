@@ -1,0 +1,39 @@
+[MYSQL]
+CREATE DATABASE SPRING;
+USE SPRING
+CREATE TABLE MEMBER(
+	MEMBER_ID VARCHAR(20) PRIMARY KEY,
+	MEMBER_PW VARCHAR(20) NOT NULL,
+	PHONE VARCHAR(14) NOT NULL,
+	EMAIL VARCHAR(50)
+);
+--------------------------------------------------------------------------------------------
+[회원가입 기능 실습 순서]
+1. vo 클래스 작성
+2. 매퍼 작성(인터페이스+xml)
+3. applicationContext.xml 파일을 이름 바꿔서 model-beans.xml로 만들었음.
+4. model-beans.xml 파일에 dataSource, factory, sessionTemplate 객체 등록
+5. MemberDao 작성
+6. MemberService 작성
+7. MVC 웹 작업 시작
+  (1) web.xml 파일에 dispatcher 서블릿 등록하기
+  (2) MemberController 클래스 등록
+  (3) service객체 가져오려면 web.xml 파일에 contextLoaderListener 등록해야 함.
+  (4) @RequestMapping과 각 메소드들 만들기
+  (5) .jsp 파일들 작성
+  (6) 테스트
+
+[로그인 기능 실습 순서]
+1. mapper(인터페이스+xml) 에 로그인 관련 select 작업 추가하기
+2. MemberDao 클래스에 select 메소드 추가하기
+3. MemberService 클래스에 login 메소드 추가하기
+4. MemberController 에서 아이디, 패스워드 파라미터 받아서 로그인 성공시 세션에 기록
+5. login_success.jsp, login_fail.jsp 작성
+6. index.jsp 메인 화면을 수정함. 로그인 된 상태에서는 login form을 안보여줌.
+
+
+
+
+
+
+  

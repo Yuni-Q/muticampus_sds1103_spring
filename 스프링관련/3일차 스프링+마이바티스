@@ -1,0 +1,14 @@
+[데이터베이스 내용 정리]
+Java : Connection, Statement, PreparedStatement, ResultSet
+Spring : JdbcTemplate(DataSource), 객체관리 DI
+Mybatis : SqlSessionFactory->SqlSession, mapper(xml+interface) 작성해서 
+             Dao로부터 SQL문장을 분리
+-----------------------------------------------------------------------------------------
+[Spring + Mybatis]
+Dao 의존 객체 : SqlSessionTemplate(DataSource - SqlSessionFactoryBean)
+
+[실습]
+필요 dependency : mysql-connector, spring context/core/jdbc, 
+		commons-dbcp, mybatis, mybatis-spring
+패키지 : vo(BookVO), mapper(BookMapper, book-mapper.xml), 
+           repository(BookDao), [service(BookService)], test(main)

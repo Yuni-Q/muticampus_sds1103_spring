@@ -1,0 +1,31 @@
+* MyBatis란?
+ - DB 프로그래밍 작업에 있어서 JDBC(Java) 방식에서의 불편함을 개선한 
+   여러 고급 기능을 지원하는 프레임 워크
+ - 커넥션 관리
+ - [프로그램->Dao : 데이터 채우기], [DB->Dao조회할 때:ResultSet] 매핑작업을 개선
+ - 어플리케이션 개발자와 데이터베이스 관리자의 업무 분담이 가능.
+ - 등장객체 : SqlSession, SqlSessionFactory, SqlSessionFactoryBuilder
+ - dependency : mybatis, mysql-connector-j
+----------------------------------------------------------------------------------------
+* 실습 순서
+ 1. 마이바티스 설정파일 작성(mybatis_conf.xml)
+  - 상단에 dtd 태그 명세 복붙
+  - typeAliases : 별명 설정. vo클래스의 full패키지명 귀찮아서 짧은이름 설정
+  - environments : 커넥션 관련 dataSource, transaction 등을 정의
+  - mappers : 매퍼 파일의 위치 설정.
+
+ 2. 매퍼파일 작성(xml+interface)
+  - 상단에 dtd 태그 명세 복붙
+  - namespace 지정 
+     : 인터페이스 매퍼의 풀 패키지명
+  - CRUD 작업에 대한 SQL 쿼리 작성(insert,update,delete,select 태그)
+     : 메소드와 비슷하게 생각 id=메소드이름, parameterType=매개변수,
+      resultType=반환유형
+
+ 3. DAO 클래스 작성
+  - 현재 작업하는 마이바티스 전반적이 설정이 들어있는 1번의 mybatis_conf.xml 파일을 
+    읽어서 SqlSessionFactory와 SqlSession을 확보하면 실행 준비 완료!(생성자에서 실행)
+  - insert,select 등의 작업을 인터페이스의 추상메소드를 호출하는 형태로 실행하면
+    실제 실행은 xml 매퍼에 있는 SQL 문장들이 실행됨.
+
+ 4. 테스트
